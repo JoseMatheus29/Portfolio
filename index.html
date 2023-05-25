@@ -6,20 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portifolio</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
 </head>
 <body class="dark">
     <div class="containerMain">
         <aside>
             <div class="container">
-                <div name="perfil">
-                    <img src="img/img.jpeg" alt="" class="img">
+                <div class="perfil">
+                    <img id="profile" src="img/img.jpeg" alt="Matheus Alvino" class="img">
                     <h3>José Matheus de Lima Alvino</h3>
                     <h6>Developer</h6>
                 </div>
             </div>
             <div class="container">
-                <div name="encontre">
+                <div class="encontre">
                     <p>Brasil</p>
                     <p>linkedin</p>
                     <p>github</p>
@@ -28,7 +29,7 @@
             </div>
             <div class="container">
                 <h3>Tecnologias</h3>
-                <div name="tecnologias">
+                <div class="tecnologias">
                     <h6 class="tec">Python</h6>
                     <h6 class="tec">Javascript</h6>
                     <h6 class="tec">Git</h6>
@@ -38,7 +39,7 @@
                 </div>
             </div>
             <div class="container">
-                <div name="educacao">
+                <div class="educacao">
                     <h1>Educação</h1>
                     <ul>
                         <li>
@@ -66,12 +67,16 @@
             </div>
         </aside>
             <main>
-                <div class="containerProjetos">
+               
+                <div class="projetos">
                     <h1>Projetos</h1>
+                    <div id="repos">
+
+                    </div>
             
                 </div>
                </main>
     </div>
- 
+    <script src="js/script.js"></script>
 </body>
 </html>
