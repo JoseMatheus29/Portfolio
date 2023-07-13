@@ -31,34 +31,36 @@ h1, p,h2{
     line-height: 1.5;
 }
 
-.img{
+.perfil img{
     border: solid 3px var(--stroke-color);
     border-radius: 200px;
-    width: 250px;
-    height: 250px;
-    margin-bottom: 20px;
 }
 
-.containerMain{
+.container-main{
     margin: 0 auto;
     width: 100%;
     padding: 20px;
     max-width: 1300px;
+
     display: flex;
     flex-direction: row;
 }
 
 .container {
     background-color: var(--container-color);
+
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     padding: 20px;
+
     margin-bottom: 20px;
+
 }
 
 aside{
     width:30%;
     padding:20px;
+    
     display: flex;
     flex-direction: column;
 }
@@ -76,7 +78,10 @@ main {
     align-items:center;
 }
 
-
+.perfil img {
+    width: 100px;
+    margin-bottom: 20px;
+}
 
 h1{
     font-weight: 700;
@@ -84,9 +89,11 @@ h1{
 
 p{
     font-weight: 300!important;
+
 }
 
-li {    
+li {
+    
     margin-bottom: 15px;
     font-weight: 300;
 }
@@ -106,12 +113,13 @@ svg {
     margin-right: 20px;
 }
 
-.encontre ul li {
+.info ul li {
     list-style-type: none;
 }
 
-.tecnologias{
+.tech-grid {
     padding: 10px;
+
     margin-top: 20px;
     margin-bottom: 20px;
 
@@ -121,7 +129,7 @@ svg {
     row-gap: 10px;
 }
 
-.tec {
+.tech {
     background-color: var(--rose);
     color: var(--container-color);
     padding: 5px 20px;
@@ -133,19 +141,11 @@ svg {
     text-align: center;
 }
 
-.educacao h1 {
+.experience h1 {
     margin-bottom: 10px;
 }
 
-.educacao l1 {
-    padding: 10px;
-}
-
-.experiencia h1 {
-    margin-bottom: 10px;
-}
-
-.experiencia li {
+.experience li {
     padding: 10px;
 }
 
@@ -155,7 +155,7 @@ main h1{
     font-size: 24px;
 }
 
-main .containerProjetos {
+main .projects-container {
     display: flex;
     flex-direction: row;
     justify-content:space-between;
@@ -163,26 +163,26 @@ main .containerProjetos {
 
 }
 
-.projetos {
+.projects {
     display: grid;
     grid-template-columns: auto auto;
     column-gap: 20px;
 }
 
 
-.projetos .projetos h2{
+.projects .project h2{
     font-size: 16px;
     margin-bottom: 20px;
 
 }
 
-.projetos h2 {
+.project h2 {
     display: flex;
 
 }
 
 
-.projetos h2 i {
+.project h2 i {
     margin-right: 10px;
    
 }
@@ -206,7 +206,7 @@ a{
     body{
         margin: 0 auto;
     }
-    .containerMain{
+    .container-main{
         flex-direction: column;
         padding:0;
         margin:0 auto;
@@ -221,11 +221,11 @@ a{
         width: 90%;
     }
 
-    main .containerProjetos {
+    main .projects-container {
         flex-direction: column;
     }
 
-    .projetos{
+    .projects{
         display: flex;
         flex-direction: column;
     }

@@ -1,32 +1,53 @@
+const projectsElement = document.querySelector('.projects');
 
-const repositories = document.querySelector('#repos');
-const urlRepos="https://api.github.com/users/josematheus29/repos"
+async function getRepositories() {
+    try{
+        const response = await fetch('https://api.github.com/users/JoseMatheus29')
+        const user = await response.json()
+        
+        const reposResponse = await fetch(user.repos_url)
+        const repos = await reposResponse.json()
+    
+        render(repos)
+    } catch(e) {
+        console.log(e)
+    }
 
-function getRepos(){
-    axios.get(urlRepos)
-    .then(response =>{
-        const data = response.data;
-        renderRepos(data);
-    })
-    .catch(error => console.log(error))
 }
 
-getRepos()
+function render(repos) {
+    console.log(repos[1])
+    for(i = 0; i < repos.length; i++) {
+        if(repos[i].description) {
+            const divRepo = document.createElement('div')
+            divRepo.setAttribute('class', 'project container')
 
-function renderRepos(data){
-    for (i=0; i<data.length; i++){
-        const divRepo = document.createElement('div');
-        divRepo.setAttribute('class', 'container')
-        divRepo.innerHTML=`<div class="repositories">
-        <div class="title-date">
-            <h5 class="title-repository">${data[i].name}</h5>
-            <span class="date-create">${Intl.DateTimeFormat('pt-BR').format(new Date (data[i].created_at))}</span>
-        </div>
-        <div class="link">
-            <a href="${data[i].svn_url}"class="link-repository" target="_blank">link</a>
-            <span class="language"><span class="circle"></span>${data[i].language}</span> 
-        </div>
-        </div>`
-        repositories.appendChild(divRepo);
+            const h2 = document.createElement('h2')
+            const icon = document.createElement('i')
+            const p = document.createElement('p')
+            const a = document.createElement('a')
+            
+            a.setAttribute('target', '_blank')
+            a.setAttribute('href', repos[i].svn_url)
+            icon.setAttribute('class', 'bx bx-folder')
+            
+            const nameRepo = document.createTextNode(repos[i].name)
+            const descriptionRepo = document.createTextNode(repos[i].description)
+            
+
+                h2.appendChild(icon)
+                h2.appendChild(nameRepo)
+                p.appendChild(descriptionRepo)
+
+
+                a.appendChild(h2)
+                divRepo.appendChild(a)
+                divRepo.appendChild(p)
+                projectsElement.appendChild(divRepo)
+    
+        }
     }
 }
+
+
+getRepositories()
