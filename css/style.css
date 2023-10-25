@@ -10,7 +10,7 @@ h1 {
     font-size: 26px; 
     text-align: center;
     font-weight: 400; 
-    line-height: 33.35px; 
+    line-height: 34px; 
 } 
 
 img{
@@ -23,7 +23,7 @@ img{
 .container-main{
     margin: 0 auto;
     width: 100%;
-    padding: 20px;
+    padding:2% 4% 2% 4%;
     max-width: 1300px;
     display: flex;
     flex-direction: row;
@@ -87,7 +87,7 @@ img{
 
 main {
     width: 70%;
-    padding:20px;
+    padding:5%;
     margin-right: 20px;
 }
 
