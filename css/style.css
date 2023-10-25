@@ -14,9 +14,9 @@ h1 {
 } 
 
 img{
-    border-radius: 200px;
-    width: 200px;
-    height: 200px;
+    border-radius: 250px;
+    width: 250px;
+    height: 250px;
     
 }
 
@@ -97,7 +97,7 @@ main h1{
 
 .sobre-mim p{
     font-family:  'Segoe UI';
-    font-size: 20px;
+    font-size: 26px;
     font-weight: 400;
     line-height: 30px;
     color: #DBF2E3; 
