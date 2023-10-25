@@ -1,39 +1,23 @@
+@import url('//fonts.googleapis.com/css?family=Ultra');
 body{
-    --main-bg-color: #e2e2e2;
-    --container-color: #ffffff;
-    --font-color: #3F3D56;
-    --stroke-color: #aa65ff;
-    --rose: #aa65ff;
-    --button-color: #ffffff;
-    --button-font-color: #3F3D56;
-
     margin: 0;
     padding: 0;
-    font-family: 'Merriweather Sans';
-
-    background-color: var(--main-bg-color);
-    color: var(--font-color);
+    background-color: #081C15;
 }
 
-.dark {
-    --main-bg-color: #22212C!important;
-    --container-color: #302F3D;
-    --font-color: #837E9F!important;
-    --stroke-color: #00FF00;
-    --rose: #CB92B1;
-    --box-shadow: rgba(0, 0, 0, 0.1);
-    --button-color: #181C1F;
-    --button-font-color: #fff;
-}
+h1 { 
+    font-family: Ultra; 
+    font-size: 26px; 
+    text-align: center;
+    font-weight: 400; 
+    line-height: 33.35px; 
+} 
 
-h1, p,h2{
-    margin: 0;
-    line-height: 1.5;
-}
-
-.perfil img{
-    border: solid 3px var(--stroke-color);
+img{
     border-radius: 200px;
+    width: 200px;
+    height: 200px;
+    
 }
 
 .container-main{
@@ -41,28 +25,61 @@ h1, p,h2{
     width: 100%;
     padding: 20px;
     max-width: 1300px;
-
     display: flex;
     flex-direction: row;
 }
 
-.container {
-    background-color: var(--container-color);
 
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+
+.container-perfil {
+    width:30%;
+    padding:20px;
+    background-color: #DBF2E3;
     border-radius: 20px;
     padding: 20px;
+    max-width: 450px;
+    max-height: 890px;
+    margin-bottom: 10px;
+    color : #245741;
+    text-align: center;
 
-    margin-bottom: 20px;
+}
+.redes-grid  {
+    display: grid;
+    grid-template-columns:  repeat(auto-fill, minmax(50px, 1fr));
 
 }
 
-aside{
-    width:30%;
-    padding:20px;
+.redes{
+    background-color: var(--rose);
+    color: var(--container-color);
+    padding: 5px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    width: auto;
+    border-radius: 20px;
+}
+.tech-grid {
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns:  repeat(auto-fill, minmax(80px, 1fr));
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.tech {
+    background-color: #245741;
+    color: #ffffff;
+    padding: 12px 15px 12px 15px;
+    font-size: 21px;
+    font-weight: 300;
     
-    display: flex;
-    flex-direction: column;
+    width:auto;
+    border-radius: 20px;
+    text-align: center;
+    align-items: center;
 }
 
 main {
@@ -71,96 +88,19 @@ main {
     margin-right: 20px;
 }
 
-.perfil{
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items:center;
-}
-
-.perfil img {
-    width: 100px;
-    margin-bottom: 20px;
-}
-
-h1{
-    font-weight: 700;
-}
-
-p{
-    font-weight: 300!important;
-
-}
-
-li {
-    
-    margin-bottom: 15px;
-    font-weight: 300;
-}
-
-li span {
-    font-weight: 600;
-}
-
-li a{
-    text-decoration: none;
-    color: var(--font-color)
-}
-
-
-svg {
-    vertical-align: middle;
-    margin-right: 20px;
-}
-
-.info ul li {
-    list-style-type: none;
-}
-
-.tech-grid {
-    padding: 10px;
-
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-    display: grid;
-    grid-template-columns:  repeat(auto-fill, minmax(80px, 1fr));
-    column-gap: 10px;
-    row-gap: 10px;
-}
-
-.tech {
-    background-color: var(--rose);
-    color: var(--container-color);
-    padding: 5px 20px;
-    font-size: 12px;
-    font-weight: 600;
-    width: auto;
-    border-radius: 20px;
-
-    text-align: center;
-}
-
-.experience h1 {
-    margin-bottom: 10px;
-}
-
-.experience li {
-    padding: 10px;
-}
-
-/* MAIN */
-
 main h1{
-    font-size: 24px;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 53px;
+    color: #DBF2E3;
 }
 
-main .projects-container {
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-    align-items:center;
-
+.sobre-mim p{
+    font-family:  'Segoe UI';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    color: #DBF2E3; 
 }
 
 .projects {
@@ -171,32 +111,21 @@ main .projects-container {
 
 
 .projects .project h2{
-    font-size: 16px;
     margin-bottom: 20px;
-
+    font-family:  'Segoe UI';
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 30px;
+    color: #DBF2E3; 
 }
 
-.project h2 {
-    display: flex;
-
+.projects p{
+    color: #DBF2E3; 
+    font-family:  'Segoe UI';
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 30px;
 }
-
-
-.project h2 i {
-    margin-right: 10px;
-   
-}
-
-
-i {
-    font-size: 25px;
-}
-
-.sobre-mim p{
-    margin-bottom: 15px;
-}
-
-
 a{
      text-decoration: none;
      color: var(--font-color);
@@ -221,12 +150,5 @@ a{
         width: 90%;
     }
 
-    main .projects-container {
-        flex-direction: column;
-    }
 
-    .projects{
-        display: flex;
-        flex-direction: column;
-    }
 }
