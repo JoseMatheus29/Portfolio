@@ -45,9 +45,8 @@ img{
 
 }
 .redes-grid  {
-    display: grid;
-    grid-template-columns:  repeat(auto-fill, minmax(50px, 1fr));
-
+    display: flex;
+    justify-content: center;
 }
 
 .redes{
