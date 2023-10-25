@@ -5,7 +5,7 @@ async function getRepositories() {
         const response = await fetch('https://api.github.com/users/JoseMatheus29')
         const user = await response.json()
         
-        const reposResponse = await fetch(user.repos_url)
+        const reposResponse = await fetch(`${user.repos_url}?per_page=100`);
         const repos = await reposResponse.json()
     
         render(repos)
