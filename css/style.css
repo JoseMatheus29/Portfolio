@@ -24,7 +24,7 @@ img{
     margin: 0 auto;
     width: 100%;
     padding:2% 4% 2% 4%;
-    max-width: 1300px;
+    max-width: 1400px;
     display: flex;
     flex-direction: row;
 }
@@ -37,8 +37,7 @@ img{
     background-color: #DBF2E3;
     border-radius: 20px;
     padding: 20px;
-    max-width: 450px;
-    max-height: 890px;
+    
     margin-bottom: 10px;
     color : #245741;
     text-align: center;
