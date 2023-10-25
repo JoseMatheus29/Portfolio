@@ -89,7 +89,7 @@ main {
 }
 
 main h1{
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 400;
     line-height: 53px;
     color: #DBF2E3;
@@ -122,7 +122,7 @@ main h1{
 .projects p{
     color: #DBF2E3; 
     font-family:  'Segoe UI';
-    font-size: 12px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 30px;
 }
