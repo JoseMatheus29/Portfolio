@@ -6,9 +6,9 @@ async function getRepositories() {
         const user = await response.json()
         
         const reposResponse = await fetch(`${user.repos_url}?per_page=100`);
-        const repos = await reposResponse.json()
-    
-        render(repos)
+        const repositorios = await reposResponse.json()
+        console.log(repositorios)
+        render(repositorios)
     } catch(e) {
         console.log(e)
     }
@@ -16,12 +16,11 @@ async function getRepositories() {
 }
 
 function render(repos) {
-    console.log(repos[1])
     for(i = 0; i < repos.length; i++) {
         if(repos[i].description) {
             const divRepo = document.createElement('div')
             divRepo.setAttribute('class', 'project container')
-
+            divRepo.setAttribute('onCLick', 'goGithub()')
             const h2 = document.createElement('h2')
             const icon = document.createElement('i')
             const p = document.createElement('p')
@@ -34,20 +33,23 @@ function render(repos) {
             const nameRepo = document.createTextNode(repos[i].name)
             const descriptionRepo = document.createTextNode(repos[i].description)
             
+            h2.appendChild(icon)
+            h2.appendChild(nameRepo)
+            p.appendChild(descriptionRepo)
 
-                h2.appendChild(icon)
-                h2.appendChild(nameRepo)
-                p.appendChild(descriptionRepo)
 
-
-                a.appendChild(h2)
-                divRepo.appendChild(a)
-                divRepo.appendChild(p)
-                projectsElement.appendChild(divRepo)
+            a.appendChild(h2)
+            divRepo.appendChild(a)
+            divRepo.appendChild(p)
+            projectsElement.appendChild(divRepo)
     
         }
     }
 }
 
+function goGithub(){
+    alert("Encaminhando para github");
+    window.location = "https://github.com/JoseMatheus29";
+}
 
 getRepositories()

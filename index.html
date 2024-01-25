@@ -2,52 +2,80 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Portifolio</title>
-    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="dark">
-    <div class="container-main">
-            <div class="container-perfil">
-                    <img src="img/img.png" alt="" class="img">
-                    <h1>José Matheus de 
-                        <br>Lima Alvino</h1>
-                    <p>josematheusdev@gmail.com</p>
-                <div class="redes-grid">
-                    <div class = "redes"><a target="_blank" href="https://www.linkedin.com/in/jmatheus029/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg> </a></div> 
-                    <div class = "redes"><a target="_blank" href="https://github.com/JoseMatheus29"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></div>                     
-                    <div class = "redes"><a target="_blank" href="https://josematheus29.github.io/Portifolio/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg></a></div>                     
-
-                </div>   
-                    <h2>Tecnologias</h2>
-                    <div class="tech-grid">
-                        <div class="tech">Python</div>
-                        <div class="tech">Javascript</div>
-                        <div class="tech">Php</div>
-                        <div class="tech">Git/Github</div>
-                        <div class="tech">HTML</div>
-                        <div class="tech">CSS</div>
-                        <div class="tech">Mysql</div>
-                        <div class="tech">Laravel</div>
-                        <div class="tech">Testes</div>
-
-                    </div>
+<body>
+    <header>
+        <nav>
+            <a href="">Apresentação</a>
+            <a href="">Projetos</a>
+            <a href="">Habilidades</a>
+            <a href="">Experiencias</a>
+        </nav>
+    </header>
+    <main>
+        <div class="main01">
+            <section>
+                <div class="apresentacao">
+                    <h1>Olá,<br>
+                    Sou José Matheus,<br>
+                    Desenvolvedor Fullstack <br></h1>
+                    <p>Formado técnico em informática no Instituto Federal de Educação, Ciência e Tecnologia do Ceará, sigo meus estudos na Universidade Federal do Ceará, onde curso o bacharelado em Sistemas e mídias digitais. Já tive experiência como bolsista em um projeto do IFCE junto com a empresa Landis+Gyr, onde trabalhei com testes.
+                        Atualmente sigo estudando desenvolvimento fullstack por conta do meu curso de ensino superior e sigo atuando em alguns projetos freelance.</p>
+                    <a class= "gitMain" href="https://github.com/JoseMatheus29">Visitar Github</a>
                 </div>
-            <main>
-                <div class="sobre-mim">
-                    <h1>Sobre mim</h1>
-                    <p>
-                        Estou atualmente cursando o curso de <strong>Sistemas e Mídias Digitais</strong> na Universidade Federal do Ceará (UFC) e sou formado em <strong>Técnico em Informática</strong> pelo Instituto Federal do Ceará (IFCE).
-                        Desde o meu período no IFCE, venho estudando tecnologia. Em 2022, consegui meu primeiro estágio como analista de qualidade, onde trabalhei por um ano e aprendi muito sobre testes e qualidade de software.
-                        Atualmente, tenho focado meus estudos no desenvolvimento FullStack, principalmente no backend, onde utilizo extensivamente o PHP, em particular com o framework Laravel, e o banco de dados PhpMyAdmin. Já tenho alguns projetos publicados e estou trabalhando no desenvolvimento de outros, utilizando as mesmas tecnologias.
-                    </p>
-                </div>
+
                 <div class="repositorio">
-                    <h1>Repositorio</h1>
-                <div class="projects"> </div>                
-        </main>
-    </div>
+                        <h2>Projetos</h2>
+                        <div class="projects"> </div>
+                </div>
+
+                <div class="containerHabilidades">
+                    <h2>Habilidades</h2>
+                        <div class="habilidades">
+                            <div class="card">
+                                <img class = "redes" src="assets/testing.png" alt="">
+                                <h3>Testes </h3>
+                                <p>Com 8 meses de experiência como QA, minha atuação concentrou-se em testes de qualidade para assegurar a robustez e desempenho de aplicações. Atualmente, aplico essa experiência na construção de testes sólidos para meus projetos web, contribuindo para a entrega de produtos de alta qualidade.</p>
+                            </div>
+                            <div class="card">
+                                <img class = "redes" src="assets/backend.png" alt="">
+                                <h3>Desenvolvimento backend</h3>
+                                <p>Com sólidos conhecimentos nos conceitos básicos, possuo mais de 2 anos de experiência em desenvolvimento backend, destacando-me no uso de frameworks em PHP e Python. Demonstro habilidade na criação eficiente de aplicações robustas e escaláveis.</p>
+                            </div>
+                            <div class="card">
+                                <img class = "redes" src="assets/ux.png" alt="">
+                                <h3>FrontEnd </h3>
+                                <p>Com conhecimento robusto em frontend utilizando HTML, CSS e JavaScript, destaco habilidades básicas em Bootstrap e React. Concentro-me na construção de telas e estou aprimorando esse conhecimento para evoluir em direção a uma habilidade fullstack.</p>
+                            </div>
+                            <div class="card">
+                                <img class = "redes" src="assets/database-storage.png" alt="">
+                                <h3>Banco de Dados </h3>
+                                <p>Com sólidos conhecimentos em SQL, acumulo mais de 2 anos de experiência, evidenciando minha expertise na administração eficiente de bancos de dados. Destaco-me na modelagem, consultas otimizadas e segurança, almejando evoluir para um perfil fullstack.</p>
+                            </div>
+                            <div class="card">
+                                <img class = "redes" src="assets/git.png" alt="">
+                                <h3>Git/Github</h3>
+                                <p>Com sólidos conhecimentos nos conceitos básicos, possuo mais de 2 anos de experiência em Git e GitHub, demonstrando habilidade no controle de versões e colaboração em projetos de desenvolvimento.</p>
+                            </div>
+                            <div class="card">
+                                <img class = "redes" src="assets/ui-ux.png" alt="">
+                                <h3> Web Desing </h3>
+                                <p>Com uma breve experiência em web design e contatos iniciais, estou imerso no estudo constante para compreender a fundo os conceitos de UX e UI. Estou comprometido em aprimorar minha habilidade na criação de interfaces envolventes. Além disso, busco expandir esse conhecimento para me tornar um profissional fullstack mais completo.</p>
+                            </div>        
+                        </div>
+                    </div>
+                </section>
+            <aside>
+                <img src="assets/imgPerfil.png" alt="imagem Perfil">
+                <div class="redes-grid">
+                </div>   
+            </aside>
+        </div>
+    </main>    
+    <footer></footer>
     <script src="js/script.js"></script>
 
 </body>

@@ -1,162 +1,151 @@
-@import url('//fonts.googleapis.com/css?family=Ultra');
-body{
-    margin: 0;
-    padding: 0;
-    background-color: #081C15;
+*{
+    background-color: #272B40;
+    margin: 10px;
 }
 
-h1 { 
-    font-family: Ultra; 
-    font-size: 26px; 
-    text-align: center;
-    font-weight: 400; 
-    line-height: 34px; 
-} 
-
-img{
-    border-radius: 250px;
-    width: 250px;
-    height: 250px;
+nav{
+    text-align: right;
     
 }
-
-.container-main{
-    margin: 0 auto;
-    width: 100%;
-    padding:2% 4% 2% 4%;
-    max-width: 1400px;
-    display: flex;
-    flex-direction: row;
+header a{
+    padding: 20px;
+    color: #FFFFFF;
+    text-decoration:  none;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+ header a:hover{
+    color: #FE4B57;
 }
 
 
+main{
+    margin: 20px ;
+    padding: 50px;
 
-.container-perfil {
-    width:30%;
-    padding:20px;
-    background-color: #DBF2E3;
+}
+section h1,h2{
+    color: #FFFFFF;
+    font-size:xx-large;
+    font-size: 70px;
+}
+section p{
+    color: #FFFFFF;
+    font-size: 20px;
+}
+aside img{
+    border-radius: 250px;
+    width: 350px;
+    height: 350px;
+    
+}
+aside h2{
+    color: #FFFFFF;
+}
+
+.apresentacao{
+    margin-top: 10%;
+    margin-bottom: 20%;
+}
+.repositorio{
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+.gitMain{
+    background-color: #FE4B57;
+    color: #FFFFFF;
+    text-decoration:  none;
+    font-family: Roboto;
+    font-size: 20px;
     border-radius: 20px;
     padding: 20px;
-    
-    margin-bottom: 10px;
-    color : #245741;
-    text-align: center;
+    line-height: 100px;
+
+}
+
+.main01 {
+    display: flex;
+    justify-content: center;
+}
+
+.projects {
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 1em;
+
+}
+
+.projects .project{
+    width: 100%;
+    background-color: #FE4B57;
+    border-radius: 20px;
+    text-align: justify;
+
+}
+.projects .project h2{
+    background-color: #FE4B57;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    font-family:  'Segoe UI';
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 30px;
+
+}
+
+.projects .project a{
+   text-decoration: none;
+}
+
+.projects p{
+    font-family:  'Segoe UI';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: justify;
+    color: #FFFFFF;
+    background-color: #FE4B57;
+
 
 }
 .redes-grid  {
     display: flex;
     justify-content: center;
-
 }
-
 .redes{
-    background-color: #52B788;
-    color: #ffffff;
     width: 50px;
     height: 50px;
-    border-radius: 25px;
     margin-left: 5%;
 }
 
 .redes svg{
     margin-top: 20%;
 }
-.tech-grid {
-    padding: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    display: grid;
-    grid-template-columns:  repeat(auto-fill, minmax(80px, 1fr));
-    column-gap: 10px;
-    row-gap: 10px;
-}
 
-.tech {
-    background-color: #245741;
-    color: #ffffff;
-    padding: 12px 5px 12px 5px;
-    font-size: 21px;
-    font-weight: 300;
-    
-    width:auto;
-    border-radius: 20px;
-    text-align: center;
+.habilidades{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 1em;
+
+}
+.containerHabilidades{
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+.card{
+    margin: 10%;
+    display: flex;
     align-items: center;
-}
-
-main {
-    width: 70%;
-    padding:5%;
-    margin-right: 20px;
-}
-
-main h1{
-    font-size: 40px;
-    font-weight: 400;
-    line-height: 53px;
-    color: #DBF2E3;
+    flex-direction: column;
     text-align: justify;
-
-}
-
-.sobre-mim p{
-    font-family:  'Segoe UI';
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 30px;
-    color: #DBF2E3; 
-    text-align: justify;
-
-}
-
-.projects {
-    display: grid;
-    grid-template-columns: auto auto;
-    column-gap: 20px;
+    
 }
 
 
-.projects .project h2{
-    margin-bottom: 20px;
-    font-family:  'Segoe UI';
-    font-size: 26px;
-    font-weight: 400;
-    line-height: 30px;
-    color: #DBF2E3; 
-}
 
-.projects p{
-    color: #DBF2E3; 
-    font-family:  'Segoe UI';
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 30px;
-    text-align: justify;
-
-}
-a{
-     text-decoration: none;
-     color: var(--font-color);
-}
-
-@media (max-width: 1024px){
-    body{
-        margin: 0 auto;
-    }
-    .container-main{
-        flex-direction: column;
-        padding:0;
-        margin:0 auto;
-    }
-
-    aside{
-        width: 90%;
-        
-    }
-
-    main{
-        width: 90%;
-    }
-
-
-}
