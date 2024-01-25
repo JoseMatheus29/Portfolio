@@ -1,5 +1,5 @@
 *{
-    background-color: #272B40;
+    background-color: #202337;
     margin: 10px;
 }
 
@@ -82,13 +82,13 @@ aside h2{
 
 .projects .project{
     width: 100%;
-    background-color: #FE4B57;
+    background-color: #272B40;
     border-radius: 20px;
     text-align: justify;
 
 }
 .projects .project h2{
-    background-color: #FE4B57;
+    background-color: #272B40;
     color: #FFFFFF;
     margin-bottom: 20px;
     font-family:  'Segoe UI';
@@ -109,7 +109,7 @@ aside h2{
     line-height: 30px;
     text-align: justify;
     color: #FFFFFF;
-    background-color: #FE4B57;
+    background-color: #272B40;
 
 
 }
@@ -121,31 +121,37 @@ aside h2{
     width: 50px;
     height: 50px;
     margin-left: 5%;
+    background-color: #272B40;
+
 }
 
-.redes svg{
-    margin-top: 20%;
-}
 
 .habilidades{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 1em;
-
 }
 .containerHabilidades{
     margin-top: 20%;
     margin-bottom: 20%;
+
 }
 .card{
     margin: 10%;
+    padding: 5%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    text-align: justify;
-    
+    text-align:  justify;
+    border-radius: 20px;
+    background-color: #272B40;
 }
 
+.inHabilidades{
+    color: #FFFFFF;
+    background-color: #272B40;
+
+}
 
 
