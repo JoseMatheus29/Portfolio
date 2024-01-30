@@ -5,7 +5,7 @@ async function getRepositories() {
         const response = await fetch('https://api.github.com/users/JoseMatheus29')
         const user = await response.json()
         
-        const reposResponse = await fetch(`${user.repos_url}?per_page=17`);
+        const reposResponse = await fetch(`${user.repos_url}?per_page=100`);
         const repositorios = await reposResponse.json()
         console.log(repositorios)
         render(repositorios)
@@ -16,8 +16,8 @@ async function getRepositories() {
 }
 
 function render(repos) {
-    for(i = 0; i < 17; i++) {
-
+    for(i = 0; i < repos.length; i++) {
+        if(repos[i].description) {
             const divRepo = document.createElement('div')
             divRepo.setAttribute('class', 'project container')
             divRepo.setAttribute('onCLick', 'goGithub()')
@@ -45,7 +45,7 @@ function render(repos) {
     
         }
     }
-
+}
 
 function goGithub(){
     alert("Encaminhando para github");
