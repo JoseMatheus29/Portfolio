@@ -9,16 +9,15 @@
 <body>
     <header>
         <nav>
-            <a href="">Apresentação</a>
-            <a href="">Projetos</a>
-            <a href="">Habilidades</a>
-            <a href="">Experiencias</a>
+            <a href="#apresentacao">Apresentação</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#habilidades">Habilidades</a>
         </nav>
     </header>
     <main>
         <div class="main01">
             <section>
-                <div class="apresentacao">
+                <div class="apresentacao" id="apresentacao">
                     <h1>Olá,<br>
                     Sou José Matheus,<br>
                     Desenvolvedor Fullstack <br></h1>
@@ -27,7 +26,7 @@
                     <a class= "gitMain" href="https://github.com/JoseMatheus29">Visitar Github</a>
                 </div>
 
-                <div class="repositorio">
+                <div class="repositorio" id="#projetos">
                 <h2>Projetos</h2>            
                 <button onclick="getRepositories(null)" class="buttonFilter">Todos</button>
                 <button onclick="getRepositories('Python')" class="buttonFilter">Python</button>
@@ -41,9 +40,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="containerHabilidades">
+                <div class="containerHabilidades" >
                     <h2>Habilidades</h2>
-                        <div class="habilidades">
+                        <div class="habilidades" id="habilidades">
                             <div class="card">
                                 <img class = "redes" src="assets/testing.png" alt="">
                                 <h3 class="inHabilidades">Testes </h3>
