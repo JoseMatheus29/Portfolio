@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Portifolio</title>
+    <title>Portifolio Matheus </title>
 </head>
 <body>
     <header>
@@ -28,10 +28,19 @@
                 </div>
 
                 <div class="repositorio">
-                        <h2>Projetos</h2>
-                        <div class="projects"> </div>
+                <h2>Projetos</h2>            
+                <button onclick="getRepositories(null)" class="buttonFilter">Todos</button>
+                <button onclick="getRepositories('Python')" class="buttonFilter">Python</button>
+                <button onclick="getRepositories('PHP')" class="buttonFilter">Php</button>
+                <button onclick="getRepositories('Java')" class="buttonFilter" >Java</button>
+                    <div class="contarinerProjects">
+                        <button class="left control">◀</button>
+                        <button class="right control">▶</button>
+                        <div class="projectsWrapper">
+                            <div class="projects"> </div>    
+                        </div>
+                    </div>
                 </div>
-
                 <div class="containerHabilidades">
                     <h2>Habilidades</h2>
                         <div class="habilidades">

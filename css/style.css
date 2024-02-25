@@ -66,40 +66,86 @@ aside h2{
 
 }
 
+.buttonFilter{
+    background-color: #FE4B57;
+    color: #FFFFFF;
+    text-decoration:  none;
+    font-family: Roboto;
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
 .main01 {
     display: flex;
     justify-content: center;
 }
-
-.projects {
+.left{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: auto;
+    bottom: 0;
+    color: #FE4B57;
     cursor: pointer;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 1em;
+    border: none;
+}
+
+.right{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+    bottom: 0;
+    color: #FE4B57;
+    cursor: pointer;
+    border: none;
 
 }
 
-.projects .project{
-    width: 100%;
-    background-color: #272B40;
+.contarinerProjects{
+    position: relative;
+    padding: 15px;
+
+}
+
+.projectsWrapper{
+    overflow-x: auto;
+}
+
+.projectsWrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .projects {
+    display: flex;
+    gap: 15px;
+    width: 1280px;
+    justify-content: space-between;
+}
+
+.projects .project {
+    background-color: #FE4B57;
+    flex: 1; /* Esta propriedade permite que as divs cresçam e ocupem o espaço disponível */
+    height: 250px;
     border-radius: 20px;
     text-align: justify;
-
 }
 .projects .project h2{
-    background-color: #272B40;
+    background-color: #FE4B57;
     color: #FFFFFF;
     margin-bottom: 20px;
     font-family:  'Segoe UI';
     font-size: 26px;
     font-weight: 400;
     line-height: 30px;
-
+    width: 450px;
+    word-wrap: break-word;
 }
 
 .projects .project a{
    text-decoration: none;
+
 }
 
 .projects p{
@@ -109,10 +155,9 @@ aside h2{
     line-height: 30px;
     text-align: justify;
     color: #FFFFFF;
-    background-color: #272B40;
-
-
+    background-color: #FE4B57;
 }
+
 .redes-grid  {
     display: flex;
     justify-content: center;
