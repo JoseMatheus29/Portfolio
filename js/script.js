@@ -57,46 +57,6 @@ function render(repos) {
     }
 }
 
-function filterElements(repos, language){
-    if (language == null) {
-        render(repos);
-    } else {
-        const reposFilter = repos.filter(repo => repo.language === language);
-        render(reposFilter);
-    }
-}
-
-function slideProjects(){
-    const controls = document.querySelectorAll('.control')
-    const projects = document.querySelectorAll('.project')
-    const maxProjects = projects.length;
-    let currentItem = 0
-    controls.forEach(control => {
-        control.addEventListener('click', () =>{
-            const isLeft = control.classList.contains('left')
-            if(isLeft){
-                currentItem -= 1;
-            }else{
-                currentItem += 1;
-            }
-            if(currentItem >= maxProjects){
-                currentItem = 0;
-            }
-            if(currentItem < 0 ){
-                currentItem = maxProjects - 1;
-            }
-            projects.forEach(project => project.classList.remove('currentItem'))
-            projects[currentItem].scrollIntoView({
-            });
-        })
-    })
-}
-
-function goGithub(){
-    alert("Encaminhando para github");
-    window.location = "https://github.com/JoseMatheus29";
-}
-
 function renderPage() {
     const start = (currentPage - 1) * projectsPerPage;
     const end = start + projectsPerPage;
