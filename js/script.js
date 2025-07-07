@@ -15,6 +15,8 @@ async function getRepositories(language) {
         } else {
             allRepos = repositorios.filter(repo => repo.description && repo.language === language);
         }
+        // Ordena por data de última atualização (mais recente primeiro)
+        allRepos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
         currentPage = 1;
         renderPage();
     } catch(e) {
