@@ -13,13 +13,18 @@
     <header
         class="fixed top-0 left-0 w-full z-50 bg-neutral-900 bg-opacity-95 backdrop-blur flex flex-wrap md:flex-nowrap justify-between items-center px-4 md:px-10 py-4">
         <div class="text-white text-2xl md:text-3xl font-bold font-['Roboto']">JmCode</div>
-        <nav class="flex gap-4 md:gap-8 border rounded-full px-4 md:px-8 py-2 mt-4 md:mt-0 w-full md:w-auto justify-center md:justify-start">
-            <a class="text-white/70 text-lg md:text-xl font-normal font-['Roboto'] hover:text-green-600 transition" href="#apresentacao">Apresentação</a>
-            <a class="text-white/70 text-lg md:text-xl font-normal font-['Roboto'] hover:text-green-600 transition" href="#sobre">Sobre</a>
-            <a class="text-white/70 text-lg md:text-xl font-normal font-['Roboto'] hover:text-green-600 transition" href="#projetos">Projetos</a>
-            <a class="text-white/70 text-lg md:text-xl font-normal font-['Roboto'] hover:text-green-600 transition" href="#habilidades">Habilidades</a>
+        <nav
+            class="flex gap-4 md:gap-8 border rounded-full px-4 md:px-8 py-2 mt-4 md:mt-0 w-full md:w-auto justify-center md:justify-start">
+            <a class="text-white/70 text-lg md:text-xl font-normal font-['Roboto'] hover:text-green-600 transition"
+                href="#apresentacao">Apresentação</a>
+            <a class="text-white/70 text-lg md:text-xl font-normal font-['Roboto'] hover:text-green-600 transition"
+                href="#sobre">Sobre</a>
+            <a class="text-white/70 text-lg md:text-xl font-normal font-['Roboto'] hover:text-green-600 transition"
+                href="#projetos">Projetos</a>
+            <a class="text-white/70 text-lg md:text-xl font-normal font-['Roboto'] hover:text-green-600 transition"
+                href="#habilidades">Habilidades</a>
         </nav>
-        <button class="flex items-center gap-2 px-4 md:px-5 py-2 border rounded-full text-white hover:bg-green-500/10 transition mt-4 md:mt-0" onclick="window.open('assets/CvJoseMatheus.pdf', '_blank')" download>
+        <button class="hidden md:flex items-center gap-2 px-4 md:px-5 py-2 border rounded-full text-white hover:bg-green-500/10 transition mt-4 md:mt-0" onclick="window.open('assets/CvJoseMatheus.pdf', '_blank')" download>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
             </svg>
@@ -27,29 +32,41 @@
         </button>
     </header>
     <main class="pt-32 md:pt-28">
-        <section id="apresentacao" class="flex flex-col lg:flex-row items-center justify-center min-h-[80vh] gap-10 md:gap-20 px-4 md:px-12 bg-neutral-900">
+        <section id="apresentacao"
+            class="flex flex-col lg:flex-row items-center justify-center min-h-[80vh] gap-10 md:gap-20 px-4 md:px-12 bg-neutral-900">
             <div class="flex flex-col justify-center max-w-xl w-full">
                 <h1 class="text-3xl md:text-5xl font-bold text-white mb-2">Olá, eu sou</h1>
                 <h1 class="text-xl md:text-5xl font-bold text-white mb-2">José Matheus de Lima</h1>
                 <p class="text-neutral-400 text-lg md:text-xl mb-8 md:mb-10">Desenvolvedor Fullstack & Mobile</p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="https://github.com/JoseMatheus29" class="bg-green-600 text-white px-6 md:px-8 py-3 rounded font-semibold hover:bg-green-700 transition text-lg shadow flex items-center gap-2 justify-center" target="_blank">
+                    <a href="https://github.com/JoseMatheus29"
+                        class="bg-green-600 text-white px-6 md:px-8 py-3 rounded font-semibold hover:bg-green-700 transition text-lg shadow flex items-center gap-2 justify-center"
+                        target="_blank">
                         Github
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" class="w-8 h-8 text-black-500">
-                            <path d="M12,2A10,10,0,0,0,8.84,21.5c.5.08.66-.23.66-.5V19.31C6.73,19.91,6.14,18,6.14,18A2.69,2.69,0,0,0,5,16.5c-.91-.62.07-.6.07-.6a2.1,2.1,0,0,1,1.53,1,2.15,2.15,0,0,0,2.91.83,2.16,2.16,0,0,1,.63-1.34C8,16.17,5.62,15.31,5.62,11.5a3.87,3.87,0,0,1,1-2.71,3.58,3.58,0,0,1,.1-2.64s.84-.27,2.75,1a9.63,9.63,0,0,1,5,0c1.91-1.29,2.75-1,2.75-1a3.58,3.58,0,0,1,.1,2.64,3.87,3.87,0,0,1,1,2.71c0,3.82-2.34,4.66-4.57,4.91a2.39,2.39,0,0,1,.69,1.85V21c0,.27.16.59.67.5A10,10,0,0,0,12,2Z"></path>
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"
+                            class="w-8 h-8 text-black-500">
+                            <path
+                                d="M12,2A10,10,0,0,0,8.84,21.5c.5.08.66-.23.66-.5V19.31C6.73,19.91,6.14,18,6.14,18A2.69,2.69,0,0,0,5,16.5c-.91-.62.07-.6.07-.6a2.1,2.1,0,0,1,1.53,1,2.15,2.15,0,0,0,2.91.83,2.16,2.16,0,0,1,.63-1.34C8,16.17,5.62,15.31,5.62,11.5a3.87,3.87,0,0,1,1-2.71,3.58,3.58,0,0,1,.1-2.64s.84-.27,2.75,1a9.63,9.63,0,0,1,5,0c1.91-1.29,2.75-1,2.75-1a3.58,3.58,0,0,1,.1,2.64,3.87,3.87,0,0,1,1,2.71c0,3.82-2.34,4.66-4.57,4.91a2.39,2.39,0,0,1,.69,1.85V21c0,.27.16.59.67.5A10,10,0,0,0,12,2Z">
+                            </path>
                         </svg>
                     </a>
-                    <a href="https://www.linkedin.com/in/jmatheus029/" class="border border-white text-white px-6 md:px-8 py-3 rounded font-semibold hover:bg-neutral-800 transition text-lg shadow flex items-center gap-2 justify-center" target="_blank">
+                    <a href="https://www.linkedin.com/in/jmatheus029/"
+                        class="border border-white text-white px-6 md:px-8 py-3 rounded font-semibold hover:bg-neutral-800 transition text-lg shadow flex items-center gap-2 justify-center"
+                        target="_blank">
                         Linkedin
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 text-black-500">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z" />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"
+                            class="w-5 h-5 text-black-500">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z" />
                         </svg>
                     </a>
                 </div>
             </div>
             <div class="flex-shrink-0 flex items-center justify-center mt-8 lg:mt-0">
-                <div class="rounded-full p-2 w-40 h-40 md:w-[350px] md:h-[350px] lg:w-[500px] lg:h-[500px] flex items-center justify-center bg-neutral-900">
-                    <img src="assets/imgPerfil.jpg" alt="Foto de perfil" class="w-full h-full object-cover rounded-full" />
+                <div
+                    class="rounded-full p-2 w-40 h-40 md:w-[350px] md:h-[350px] lg:w-[500px] lg:h-[500px] flex items-center justify-center bg-neutral-900">
+                    <img src="assets/imgPerfil.jpg" alt="Foto de perfil"
+                        class="w-full h-full object-cover rounded-full" />
                 </div>
             </div>
         </section>
@@ -57,24 +74,40 @@
         <section id="sobre">
             <div class="text-center justify-start text-white text-3xl md:text-5xl font-bold font-['Roboto']">Sobre</div>
             <br>
-            <div class="mx-auto w-full max-w-2xl px-4 text-center justify-start text-white text-base md:text-lg font-normal font-['Roboto']">
-                Olá, sou José Matheus, um Desenvolvedor Full Stack Web com formação técnica pelo Instituto Federal de Educação, Ciências e Tecnologia do Ceará, e estudante graduando do curso de Sistemas e Mídias Digitais na Universidade Federal do Ceará. Especializado no desenvolvimento de produtos utilizando PHP para o backend, React e Bootstrap para o frontend, estou sempre em busca de aprimorar minhas habilidades e contribuir para o desenvolvimento de soluções tecnológicas inovadoras, sempre com muita proatividade e dedicação.
+            <div
+                class="mx-auto w-full max-w-2xl px-4 text-center justify-start text-white text-base md:text-lg font-normal font-['Roboto']">
+                Olá, sou José Matheus, um Desenvolvedor Full Stack Web com formação técnica pelo Instituto Federal de
+                Educação, Ciências e Tecnologia do Ceará, e estudante graduando do curso de Sistemas e Mídias Digitais
+                na Universidade Federal do Ceará. Especializado no desenvolvimento de produtos utilizando PHP para o
+                backend, React e Bootstrap para o frontend, estou sempre em busca de aprimorar minhas habilidades e
+                contribuir para o desenvolvimento de soluções tecnológicas inovadoras, sempre com muita proatividade e
+                dedicação.
             </div>
         </section>
         <br class="hidden md:block"><br class="hidden md:block"><br class="hidden md:block">
         <section id="projetos" class="py-16 px-2 md:px-8">
             <div class="text-center text-white text-3xl md:text-5xl font-bold font-['Roboto'] mb-10">Projetos</div>
             <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-8">
-                <button onclick="getRepositories(null)" class="px-3 md:px-4 py-2 bg-neutral-700 text-white rounded hover:bg-green-600 transition">All</button>
-                <button onclick="getRepositories('Swift')" class="px-3 md:px-4 py-2 bg-neutral-700 text-white rounded hover:bg-green-600 transition">Swift</button>
-                <button onclick="getRepositories('PHP')" class="px-3 md:px-4 py-2 bg-neutral-700 text-white rounded hover:bg-green-600 transition">PHP</button>
-                <button onclick="getRepositories('JavaScript')" class="px-3 md:px-4 py-2 bg-neutral-700 text-white rounded hover:bg-green-600 transition">JavaScript</button>
-                <button onclick="getRepositories('TypeScript')" class="px-3 md:px-4 py-2 bg-neutral-700 text-white rounded hover:bg-green-600 transition">TypeScript</button>
-                <button onclick="getRepositories('Java')" class="px-3 md:px-4 py-2 bg-neutral-700 text-white rounded hover:bg-green-600 transition">Java</button>
-                <button onclick="getRepositories('Solidity')" class="px-3 md:px-4 py-2 bg-neutral-700 text-white rounded hover:bg-green-600 transition">Solidity</button>
-                <button onclick="getRepositories('Python')" class="px-3 md:px-4 py-2 bg-neutral-700 text-white rounded hover:bg-green-600 transition">Python</button>
-                <button onclick="getRepositories('HTML')" class="px-3 md:px-4 py-2 bg-neutral-700 text-white rounded hover:bg-green-600 transition">HTML</button>
-                <button onclick="getRepositories('Processing')" class="px-3 md:px-4 py-2 bg-neutral-700 text-white rounded hover:bg-green-600 transition">Processing</button>
+                <button onclick="getRepositories(null)"
+                    class="px-3 md:px-4 py-2 bg-neutral-700 text-white rounded hover:bg-green-600 transition">All</button>
+                <button onclick="getRepositories('Swift')"
+                    class="px-3 md:px-4 py-2 bg-neutral-700 text-white rounded hover:bg-green-600 transition">Swift</button>
+                <button onclick="getRepositories('PHP')"
+                    class="px-3 md:px-4 py-2 bg-neutral-700 text-white rounded hover:bg-green-600 transition">PHP</button>
+                <button onclick="getRepositories('JavaScript')"
+                    class="px-3 md:px-4 py-2 bg-neutral-700 text-white rounded hover:bg-green-600 transition">JavaScript</button>
+                <button onclick="getRepositories('TypeScript')"
+                    class="px-3 md:px-4 py-2 bg-neutral-700 text-white rounded hover:bg-green-600 transition">TypeScript</button>
+                <button onclick="getRepositories('Java')"
+                    class="px-3 md:px-4 py-2 bg-neutral-700 text-white rounded hover:bg-green-600 transition">Java</button>
+                <button onclick="getRepositories('Solidity')"
+                    class="px-3 md:px-4 py-2 bg-neutral-700 text-white rounded hover:bg-green-600 transition">Solidity</button>
+                <button onclick="getRepositories('Python')"
+                    class="px-3 md:px-4 py-2 bg-neutral-700 text-white rounded hover:bg-green-600 transition">Python</button>
+                <button onclick="getRepositories('HTML')"
+                    class="px-3 md:px-4 py-2 bg-neutral-700 text-white rounded hover:bg-green-600 transition">HTML</button>
+                <button onclick="getRepositories('Processing')"
+                    class="px-3 md:px-4 py-2 bg-neutral-700 text-white rounded hover:bg-green-600 transition">Processing</button>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto projects">
             </div>
@@ -141,8 +174,7 @@
                 </div>
                 <div
                     class="bg-neutral-800 border border-neutral-700 rounded-lg shadow-sm p-5 flex flex-col items-center">
-                    <svg fill="currentColor" class="w-12 h-12 text-green-400 mb-4" viewBox="0 0 200 200" 
-                        >
+                    <svg fill="currentColor" class="w-12 h-12 text-green-400 mb-4" viewBox="0 0 200 200">
                         <path
                             d="M100,15a85,85,0,1,0,85,85A84.93,84.93,0,0,0,100,15Zm0,150a65,65,0,1,1,65-65A64.87,64.87,0,0,1,100,165Zm25-91.5-29,35L76,94c-4.5-3.5-10.5-2.5-14,2s-2.5,10.5,2,14c6,4.5,12.5,9,18.5,13.5,4.5,3,8.5,7.5,14,8,1.5,0,3.5,0,5-1l3-3,22.5-27c4-5,8-9.5,12-14.5,3-4,4-9,.5-13L138,71.5c-3.5-2.5-9.5-2-13,2Z">
                         </path>
@@ -172,6 +204,19 @@
                 </div>
             </div>
         </section>
+        <!-- Botão flutuante para download do currículo (apenas mobile) -->
+        <a href="assets/CvJoseMatheus.pdf"
+           target="_blank"
+           download
+           class="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-3 rounded-full bg-green-600 text-white shadow-lg hover:bg-green-700 transition block md:hidden"
+           aria-label="Baixar Currículo">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4"/>
+            </svg>
+            Curriculo
+        </a>
     </main>
     <script src="js/script.js"></script>
 </body>
