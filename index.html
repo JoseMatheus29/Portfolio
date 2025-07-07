@@ -35,9 +35,9 @@
         <section id="apresentacao"
             class="flex flex-col lg:flex-row items-center justify-center min-h-[80vh] gap-10 md:gap-20 px-4 md:px-12 bg-neutral-900">
             <div class="flex flex-col justify-center max-w-xl w-full">
-                <h1 class="text-3xl md:text-5xl font-bold text-white mb-2">Olá, eu sou</h1>
-                <h1 class="text-xl md:text-5xl font-bold text-white mb-2">José Matheus de Lima</h1>
-                <p class="text-neutral-400 text-lg md:text-xl mb-8 md:mb-10">Desenvolvedor Fullstack & Mobile</p>
+                <h1 class="text-3xl md:text-5xl font-bold text-white mb-2"><span id="typewriter-1"></span></h1>
+                <h1 class="text-xl md:text-5xl font-bold text-white mb-2"><span id="typewriter-2"></span></h1>
+                <p class="text-neutral-400 text-lg md:text-xl mb-8 md:mb-10"><span id="typewriter-3"></span></p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="https://github.com/JoseMatheus29"
                         class="bg-green-600 text-white px-6 md:px-8 py-3 rounded font-semibold hover:bg-green-700 transition text-lg shadow flex items-center gap-2 justify-center"
@@ -219,4 +219,36 @@
         </a>
     </main>
     <script src="js/script.js"></script>
+    <script>
+// Animação de digitação para as três linhas
+const typewriterData = [
+  { id: 'typewriter-1', text: 'Olá, eu sou', delay: 0 },
+  { id: 'typewriter-2', text: 'José Matheus de Lima', delay: 800 },
+  { id: 'typewriter-3', text: 'Desenvolvedor Fullstack & Mobile', delay: 2000 }
+];
+
+function typeWriterEffect(elementId, text, speed, startDelay = 0, callback) {
+  const el = document.getElementById(elementId);
+  let i = 0;
+  setTimeout(function typing() {
+    if (el) {
+      el.textContent = text.slice(0, i);
+      if (i <= text.length) {
+        i++;
+        setTimeout(typing, speed);
+      } else if (callback) {
+        callback();
+      }
+    }
+  }, startDelay);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  typeWriterEffect('typewriter-1', typewriterData[0].text, 60, 0, function() {
+    typeWriterEffect('typewriter-2', typewriterData[1].text, 60, 0, function() {
+      typeWriterEffect('typewriter-3', typewriterData[2].text, 60);
+    });
+  });
+});
+</script>
 </body>
