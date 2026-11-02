@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@import "@fontsource-variable/onest";
+@import "@fontsource/fira-code/400.css";
+@import "@fontsource/fira-code/500.css";
+
+@theme {
+  --color-fundo: #f3f5f9;
+  --color-bloco: #ffffff;
+  --color-tinta: #0f1b2d;
+  --color-corpo: #33415a;
+  --color-suave: #55627a;
+  --color-borda: #8492a8;
+  --color-marca: #1d4fa3;
+
+  --font-sans: "Onest Variable", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Fira Code", ui-monospace, Consolas, monospace;
+
+  --radius-bloco: 22px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 16px;
+  }
+
+  body {
+    background: var(--color-fundo);
+    color: var(--color-tinta);
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  [role="tabpanel"]:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+    overflow-wrap: anywhere;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    * {
+      transition: none !important;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+---
+nome: Saúde Digital
+origem: Desafio técnico
+periodo: '2026'
+papel: Aplicativo, API e protótipo no Figma
+ordem: 2
+largura: 4
+resumo: Agendamento de consultas sem conflito de horário, do Figma ao app e à API.
+chamada: Agendar uma consulta em quatro passos, sem dois pacientes no mesmo horário.
+stackCurta: Laravel 13 · Expo · NativeWind
+tecnologias: [React Native, TypeScript, PHP, SQL]
+funcionalidades:
+  - Agendamento em quatro passos, da especialidade às observações.
+  - Horários já ocupados aparecem desabilitados.
+  - Próxima consulta na tela inicial.
+  - Histórico com filtro por status e cancelamento.
+stack:
+  - area: Aplicativo
+    itens: Expo Router · TypeScript · NativeWind · TanStack Query · Zustand · Jest
+  - area: API
+    itens: Laravel 13 · PHP 8.3 · SQLite
+repositorios:
+  - rotulo: Ver o código
+    url: https://github.com/JoseMatheus29/Saude-Digital
+---
+
+<Decisao titulo="Horário único garantido também no banco">
+A restrição `unique(professional_id, scheduled_at)` protege contra duas requisições simultâneas, mesmo que a validação da aplicação deixe passar.
+</Decisao>
+
+<Decisao titulo="Regras de negócio fora dos controllers">
+As regras ficam em `AppointmentService` e viram respostas 422 com mensagens legíveis, sem `try/catch` espalhado pelos controllers.
+</Decisao>
+
+<Decisao titulo="A grade mostra a disponibilidade real">
+O protótipo pedia horários ocupados desabilitados, então adicionei um endpoint de disponibilidade. O backend continua sendo a fonte de verdade se outra pessoa agendar no mesmo instante.
+</Decisao>
+
+<Decisao titulo="Testes nas regras que o app também precisa acertar">
+São 13 testes em regras como cancelamento, geração de horários e troca de especialidade no fluxo de agendamento.
+</Decisao>

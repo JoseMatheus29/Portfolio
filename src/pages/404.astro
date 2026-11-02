@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { comBase, site } from '../data/site';
+---
+
+<Layout titulo={`Página não encontrada · ${site.nome}`}>
+  <main id="conteudo" class="flex flex-col items-start gap-4 rounded-bloco bg-bloco p-[clamp(24px,4vw,48px)]">
+    <h1 class="text-[clamp(36px,5vw,64px)] font-extrabold leading-none tracking-[-0.03em]">Página não encontrada</h1>
+    <p>O endereço pode ter mudado com a nova versão do portfólio.</p>
+    <a href={comBase()} class="rounded-xl bg-marca px-[22px] py-[13px] font-bold text-white">Ir para a página inicial</a>
+  </main>
+</Layout>

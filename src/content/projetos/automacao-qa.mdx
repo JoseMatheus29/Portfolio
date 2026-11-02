@@ -1,0 +1,38 @@
+---
+nome: AutomacaoQA
+origem: Avaliação técnica
+periodo: '2026'
+papel: Projeto completo
+ordem: 5
+largura: 6
+resumo: Nove cenários de teste E2E em Gherkin, com relatório Allure e execução a cada push.
+chamada: Testes de ponta a ponta para uma loja de demonstração, rodando a cada push.
+stackCurta: Selenium · Behave · GitHub Actions
+tecnologias: [Python]
+tituloFuncionalidades: O que é coberto
+funcionalidades:
+  - Login válido e casos de erro, como usuário bloqueado e campos vazios.
+  - Produto no carrinho e carrinho vazio.
+  - Fluxo completo de compra.
+  - Checkout sem os dados obrigatórios.
+stack:
+  - area: Testes
+    itens: Python 3.11 · Selenium 4 · Behave
+  - area: Relatórios e CI
+    itens: Allure · GitHub Actions
+repositorios:
+  - rotulo: Ver o código
+    url: https://github.com/JoseMatheus29/AutomacaoQA
+---
+
+<Decisao titulo="Page Object Model">
+Cada página do site tem sua própria classe, com locators e ações. Quando um seletor muda, a correção fica em um lugar só.
+</Decisao>
+
+<Decisao titulo="Nenhum time.sleep no projeto">
+Todas as esperas são explícitas, com `WebDriverWait`, o que evita pausas fixas no meio dos testes.
+</Decisao>
+
+<Decisao titulo="Falhas fáceis de investigar">
+Cada falha gera uma captura de tela automática, e os resultados do Allure ficam como artefatos no GitHub Actions.
+</Decisao>

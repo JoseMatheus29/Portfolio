@@ -1,0 +1,12 @@
+---
+type Props = {
+  titulo: string;
+};
+
+const { titulo } = Astro.props;
+---
+
+<article class="flex min-w-0 flex-col gap-2 rounded-bloco bg-bloco p-7 md:last:odd:col-span-2">
+  <h3 class="text-[21px] font-bold leading-[1.2]">{titulo}</h3>
+  <div class="text-corpo"><slot /></div>
+</article>

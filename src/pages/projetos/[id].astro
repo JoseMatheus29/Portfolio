@@ -1,0 +1,116 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Decisao from '../../components/Decisao.astro';
+import { comBase, site } from '../../data/site';
+
+export async function getStaticPaths() {
+  const projetos = (await getCollection('projetos')).sort((a, b) => a.data.ordem - b.data.ordem);
+  return projetos.map((projeto, indice) => ({
+    params: { id: projeto.id },
+    props: { projeto, proximo: projetos[(indice + 1) % projetos.length] },
+  }));
+}
+
+const { projeto, proximo } = Astro.props;
+const { data } = projeto;
+const { Content } = await render(projeto);
+const telas = data.capturas.filter((captura) => captura.formato === 'celular');
+const faixas = data.capturas.filter((captura) => captura.formato === 'faixa');
+const janelas = data.capturas.filter((captura) => captura.formato === 'janela');
+---
+
+<Layout titulo={`${data.nome} · ${site.nome}`} descricao={data.resumo}>
+  <header class="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 text-base font-semibold">
+    <a href={comBase('#projetos')} class="py-3 hover:text-marca">Voltar aos projetos</a>
+    <a href={comBase()} class="py-3 text-xl font-extrabold">{site.marca}</a>
+  </header>
+
+  <main id="conteudo" class="grid grid-cols-12 gap-3.5">
+    <section class="col-span-12 flex min-w-0 flex-col gap-4 rounded-bloco bg-marca p-[clamp(24px,4vw,48px)] text-white md:col-span-8">
+      <p class="font-semibold">{data.origem}</p>
+      <h1 class="text-[clamp(52px,9vw,128px)] font-extrabold leading-[.95] tracking-[-0.04em] [overflow-wrap:anywhere]">{data.nome}</h1>
+      <p class="max-w-[44ch] text-[clamp(19px,1.9vw,24px)] font-medium leading-[1.3]">{data.chamada}</p>
+    </section>
+
+    <section aria-label="Ficha do projeto" class="col-span-12 flex min-w-0 flex-col justify-between gap-5 rounded-bloco bg-bloco p-7 md:col-span-4">
+      <dl class="flex flex-col gap-3.5 text-base">
+        <div><dt class="text-suave">Período</dt><dd class="font-semibold">{data.periodo}</dd></div>
+        <div><dt class="text-suave">Meu papel</dt><dd class="font-semibold">{data.papel}</dd></div>
+        {data.atividade && <div><dt class="text-suave">Atividade</dt><dd class="font-semibold">{data.atividade}</dd></div>}
+      </dl>
+      {data.repositorios.length > 0 && (
+        <div class="flex flex-wrap gap-x-5 gap-y-1 font-bold">
+          {data.repositorios.map((repositorio) => (
+            <a href={repositorio.url} target="_blank" rel="noopener" class="py-2.5 underline underline-offset-4">{repositorio.rotulo}</a>
+          ))}
+        </div>
+      )}
+    </section>
+
+    {telas.length > 0 && (
+      <div role="group" aria-label={`Telas do ${data.nome}. Role para ver todas.`} tabindex="0" class="col-span-12 flex min-w-0 snap-x gap-3.5 overflow-x-auto pb-1 lg:grid lg:grid-cols-5 lg:overflow-visible lg:pb-0">
+        {telas.map((captura) => (
+          <img
+            src={comBase(captura.src)}
+            alt={captura.alt}
+            width={captura.largura}
+            height={captura.altura}
+            loading="lazy"
+            class="h-auto w-[62%] max-w-[260px] flex-none snap-start rounded-bloco sm:w-[34%] lg:w-full lg:max-w-none"
+          />
+        ))}
+      </div>
+    )}
+
+    {faixas.map((captura) => (
+      <div class="col-span-12 flex min-w-0 justify-center rounded-bloco bg-bloco p-[clamp(16px,3vw,36px)]">
+        <img src={comBase(captura.src)} alt={captura.alt} width={captura.largura} height={captura.altura} loading="lazy" class="h-auto w-full max-w-[664px] rounded-xl" />
+      </div>
+    ))}
+
+    {janelas.map((captura) => (
+      <div class="col-span-12 flex min-w-0 justify-center rounded-bloco bg-bloco p-[clamp(12px,2vw,24px)] md:col-span-6">
+        <img src={comBase(captura.src)} alt={captura.alt} width={captura.largura} height={captura.altura} loading="lazy" class="h-auto w-full max-w-[616px] rounded-xl" />
+      </div>
+    ))}
+
+    <section aria-labelledby="titulo-funcionalidades" class="col-span-12 flex min-w-0 flex-col gap-3.5 rounded-bloco bg-bloco p-7 md:col-span-6">
+      <h2 id="titulo-funcionalidades" class="text-[28px] font-extrabold tracking-[-0.02em]">{data.tituloFuncionalidades}</h2>
+      <ul class="flex list-disc flex-col gap-2 pl-5 text-corpo">
+        {data.funcionalidades.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
+
+    <section aria-labelledby="titulo-tecnologias" class="col-span-12 flex min-w-0 flex-col gap-3.5 rounded-bloco bg-bloco p-7 md:col-span-6">
+      <h2 id="titulo-tecnologias" class="text-[28px] font-extrabold tracking-[-0.02em]">Tecnologias</h2>
+      <div class="flex flex-col gap-3 text-base">
+        {data.stack.map(({ area, itens }) => (
+          <div>
+            <p class="font-semibold">{area}</p>
+            <p class="font-mono text-sm text-suave">{itens}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section aria-labelledby="titulo-por-dentro" class="col-span-12 flex min-w-0 flex-col gap-3.5 pt-5">
+      <h2 id="titulo-por-dentro" class="text-[clamp(30px,3.6vw,48px)] font-extrabold leading-[1.05] tracking-[-0.025em]">Por dentro do projeto</h2>
+      <div class="grid gap-3.5 md:grid-cols-2">
+        <Content components={{ Decisao }} />
+      </div>
+    </section>
+
+    <a href={comBase(`projetos/${proximo.id}/`)} class="col-span-12 rounded-bloco bg-tinta p-7 text-[clamp(22px,3vw,36px)] font-extrabold tracking-[-0.02em] text-fundo transition-colors hover:bg-marca">
+      Próximo projeto: {proximo.data.nome}
+    </a>
+  </main>
+
+  <footer class="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 pt-3 font-semibold">
+    <a href={`mailto:${site.email}`} class="[overflow-wrap:anywhere] py-2.5 underline underline-offset-4">{site.email}</a>
+    <span class="flex gap-5">
+      <a href={site.github} target="_blank" rel="noopener" class="py-2.5 underline underline-offset-4">GitHub</a>
+      <a href={site.linkedin} target="_blank" rel="noopener" class="py-2.5 underline underline-offset-4">LinkedIn</a>
+    </span>
+  </footer>
+</Layout>

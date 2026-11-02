@@ -1,0 +1,72 @@
+---
+nome: Sobrô?
+origem: Produto próprio
+periodo: Desde março de 2025
+papel: Aplicativo, API e design no Figma
+ordem: 1
+largura: 8
+destaque: true
+resumo: App de finanças pessoais, com contas, cartão de crédito, parcelas, orçamentos e caixinhas. Fiz o aplicativo e a API.
+chamada: Um app para saber quanto sobrou no fim do mês, e para onde foi o resto.
+stackCurta: React Native · Expo · Fastify · PostgreSQL
+tecnologias: [React Native, TypeScript, Node, SQL]
+atividade: 68 commits no app e 24 na API, em 1º nov. 2026
+tituloFuncionalidades: O que o app faz
+funcionalidades:
+  - Contas, transferências e saldo calculado a partir das transações.
+  - Cartão de crédito, com compras no mês do vencimento da fatura.
+  - Parcelas e despesas recorrentes.
+  - Orçamento mensal e por categoria.
+  - Caixinhas, que reservam dinheiro sem mexer no saldo.
+  - Perfis gerenciados, para cuidar das finanças de outra pessoa.
+  - Dicas com base nos gastos do mês.
+capturas:
+  - src: projetos/sobro/inicio.webp
+    alt: Tela inicial do Sobrô, com saldo mensal, orçamento, fluxo de caixa e últimas transações
+    largura: 720
+    altura: 1280
+  - src: projetos/sobro/detalhes.webp
+    alt: Tela de detalhes do Sobrô, com gráfico da distribuição de gastos por categoria
+    largura: 720
+    altura: 1280
+  - src: projetos/sobro/nova-saida.webp
+    alt: Passo de escolha da categoria ao registrar uma nova saída no Sobrô
+    largura: 720
+    altura: 1280
+  - src: projetos/sobro/carteira.webp
+    alt: Tela de carteira do Sobrô, com cartões, receitas, despesas, saldo e transações
+    largura: 720
+    altura: 1280
+  - src: projetos/sobro/dicas.webp
+    alt: Painel de dicas do Sobrô, com previsão de gastos e sugestão de reserva
+    largura: 720
+    altura: 1280
+stack:
+  - area: Aplicativo
+    itens: Expo SDK 57 · React Native 0.86 · Expo Router · NativeWind · TanStack Query
+  - area: API
+    itens: Node 22 · Fastify 5 · Zod · PostgreSQL 16 · Drizzle
+  - area: Qualidade e entrega
+    itens: Vitest · Jest · Docker · Heroku
+repositorios:
+  - rotulo: Código do app
+    url: https://github.com/JoseMatheus29/Sobro
+  - rotulo: Código da API
+    url: https://github.com/JoseMatheus29/Sobro-Api
+---
+
+<Decisao titulo="Dos dados no aparelho para uma API com login">
+O app usava SQLite, e o único backup era um arquivo exportado à mão. Com a API, trocar de celular não faz perder nada. Em troca, sem internet o app não mostra os dados.
+</Decisao>
+
+<Decisao titulo="Repetir uma gravação não duplica a despesa">
+Se a rede cair, o app reenvia a mesma `Idempotency-Key`, e a API devolve a resposta original em vez de gravar outra vez.
+</Decisao>
+
+<Decisao titulo="A despesa das 22h que caía no mês errado">
+No último dia do mês, 22h em Brasília já é o dia seguinte em UTC. A correção foi gravar a data que a pessoa vê como meio-dia UTC daquele dia.
+</Decisao>
+
+<Decisao titulo="Testes em um Postgres de verdade">
+Os testes de integração usam um banco real, para validar locks, `FOR UPDATE` e buscas com `unaccent`.
+</Decisao>

@@ -1,0 +1,38 @@
+---
+nome: Foco
+origem: Projeto pessoal · Em construção
+periodo: Em construção, desde outubro de 2026
+papel: Projeto completo
+ordem: 6
+largura: 6
+resumo: App de Windows para medir tempo por card do Jira e registrar aprendizados, com dados locais.
+chamada: Quanto tempo cada card do Jira realmente levou.
+stackCurta: Electron · React · SQLite
+tecnologias: [TypeScript, SQL]
+tituloFuncionalidades: O que está planejado
+funcionalidades:
+  - Cronômetro por card do Jira.
+  - Afazeres e notas.
+  - Registro de aprendizados e de pontos positivos e negativos.
+  - Painel de performance.
+stack:
+  - area: Aplicativo
+    itens: Electron · React · TypeScript · Zustand · Tailwind CSS
+  - area: Dados e testes
+    itens: SQLite · better-sqlite3 · Vitest
+repositorios:
+  - rotulo: Ver o código
+    url: https://github.com/JoseMatheus29/foco-work
+---
+
+<Decisao titulo="Sem API do Jira na primeira versão">
+A pessoa cola o código ou o link do card. Assim, o app não depende de token nem de autorização da TI.
+</Decisao>
+
+<Decisao titulo="Banco só no processo principal">
+Todo o SQL fica no processo principal do Electron, e a interface acessa os dados por uma ponte tipada, com `contextIsolation` e `sandbox` ligados.
+</Decisao>
+
+<Decisao titulo="Regras de tempo como funções puras">
+As regras de sessões e métricas não dependem de banco, de Electron nem de React, o que permite testá-las isoladamente.
+</Decisao>

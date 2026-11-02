@@ -1,0 +1,53 @@
+---
+import '../styles/global.css';
+import { comBase, foto, site } from '../data/site';
+
+type Props = {
+  titulo: string;
+  descricao?: string;
+};
+
+const { titulo, descricao = site.descricao } = Astro.props;
+const canonica = new URL(Astro.url.pathname, Astro.site);
+const imagem = new URL(foto, Astro.site);
+const pessoa = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: site.nomeCompleto,
+  jobTitle: site.cargo,
+  url: new URL(comBase(), Astro.site).href,
+  image: imagem.href,
+  address: { '@type': 'PostalAddress', addressLocality: 'Fortaleza', addressRegion: 'CE', addressCountry: 'BR' },
+  sameAs: [site.github, site.linkedin],
+};
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titulo}</title>
+    <meta name="description" content={descricao} />
+    <meta name="theme-color" content="#f3f5f9" />
+    <link rel="canonical" href={canonica} />
+    <link rel="icon" type="image/svg+xml" href={comBase('favicon.svg')} />
+    <link rel="sitemap" href={comBase('sitemap-index.xml')} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content={titulo} />
+    <meta property="og:description" content={descricao} />
+    <meta property="og:url" content={canonica} />
+    <meta property="og:image" content={imagem} />
+    <meta name="twitter:card" content="summary" />
+    <script type="application/ld+json" set:html={JSON.stringify(pessoa)} />
+  </head>
+  <body>
+    <a href="#conteudo" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-10 focus:rounded-xl focus:bg-marca focus:px-4 focus:py-3 focus:font-semibold focus:text-white">
+      Pular para o conteúdo
+    </a>
+    <div class="mx-auto flex max-w-[1320px] flex-col gap-3.5 px-4 pb-12 pt-4 sm:px-6 lg:px-10">
+      <slot />
+    </div>
+  </body>
+</html>

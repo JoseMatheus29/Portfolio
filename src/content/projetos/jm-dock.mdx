@@ -1,0 +1,51 @@
+---
+nome: Jm-dock
+origem: Projeto pessoal
+periodo: '2026'
+papel: Projeto completo
+ordem: 4
+largura: 6
+resumo: Dock personalizada para Windows, com temas e widgets de volume, rede, bateria, CPU e música.
+chamada: Uma dock para Windows, do meu jeito.
+stackCurta: Tauri 2 · Rust · TypeScript
+tecnologias: [TypeScript, Rust]
+funcionalidades:
+  - Efeito de ampliação ao passar o cursor.
+  - Temas prontos, e temas salvos por você.
+  - Cores, gradiente, padrões e imagem de fundo personalizáveis.
+  - Widgets de volume, rede, bateria, CPU, memória e música.
+  - Opção de esconder a barra de tarefas do Windows.
+  - Ícone na bandeja do sistema.
+capturas:
+  - src: projetos/jm-dock/dock.png
+    alt: Dock em uso, com atalhos de aplicativos, música tocando, CPU, memória, volume e relógio
+    formato: faixa
+    largura: 664
+    altura: 72
+  - src: projetos/jm-dock/temas.webp
+    alt: Tela de personalização da dock, com opções gerais e temas prontos
+    formato: janela
+    largura: 616
+    altura: 805
+  - src: projetos/jm-dock/estilo.webp
+    alt: Tela de personalização da dock, com cores, opacidade, gradiente e padrão da barra
+    formato: janela
+    largura: 616
+    altura: 805
+stack:
+  - area: Interface
+    itens: TypeScript · Vite · CSS
+  - area: Sistema
+    itens: Tauri 2 · Rust · API do Windows
+repositorios:
+  - rotulo: Ver o código
+    url: https://github.com/JoseMatheus29/Jm-dock
+---
+
+<Decisao titulo="Interface em TypeScript, sistema em Rust">
+A dock, os widgets e a personalização ficam em TypeScript. Os dados do sistema e as chamadas à API do Windows ficam em Rust.
+</Decisao>
+
+<Decisao titulo="Mudanças valem na hora">
+As preferências ficam em um `dock.json`, e cada alteração na tela de personalização é aplicada imediatamente.
+</Decisao>

@@ -1,0 +1,36 @@
+---
+nome: BlockJm
+origem: TCC, UFC
+periodo: '2026'
+papel: Contrato inteligente e API
+ordem: 3
+largura: 6
+resumo: Certificação de documentos. O hash de cada PDF fica em um contrato na Ethereum, e os metadados em MySQL.
+chamada: Provar que um documento existe e não foi alterado, com registro em blockchain.
+stackCurta: Solidity · Hardhat · Express · Prisma
+tecnologias: [TypeScript, Node, SQL]
+funcionalidades:
+  - Certificação de PDFs por upload na API.
+  - Consulta de certificações por hash ou por emissor.
+  - Autenticação por carteira Ethereum.
+  - Documentação da API com Swagger.
+stack:
+  - area: Blockchain
+    itens: Solidity · Hardhat · Ethers.js
+  - area: API
+    itens: Node.js · Express · Prisma · MySQL
+  - area: Qualidade e entrega
+    itens: Jest · Supertest · Docker Compose
+---
+
+<Decisao titulo="Integridade na blockchain, consultas no banco">
+A arquitetura é híbrida: o hash SHA-256 de cada arquivo fica no contrato, para auditoria, e os metadados ficam em MySQL, para consultas rápidas.
+</Decisao>
+
+<Decisao titulo="Login com a carteira, sem senha">
+A autenticação usa nonce e assinatura. A pessoa prova que controla o endereço Ethereum sem cadastrar uma senha na API.
+</Decisao>
+
+<Decisao titulo="Testes unitários e de integração">
+Jest e Supertest cobrem a API, e o Docker Compose sobe o ambiente completo para demonstração.
+</Decisao>
