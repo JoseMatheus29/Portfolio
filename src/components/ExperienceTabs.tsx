@@ -61,7 +61,7 @@ export default function ExperienceTabs({ experiencias }: { experiencias: Experie
         >
           <div className="flex min-w-0 flex-[1_1_320px] flex-col items-start gap-2.5">
             <h3 className="text-[clamp(24px,2.6vw,32px)] font-bold leading-[1.15] tracking-[-0.02em]">{experiencia.cargo}</h3>
-            <p className="font-mono text-sm text-marca">{experiencia.periodo}</p>
+            <p className="font-mono text-sm text-destaque">{experiencia.periodo}</p>
             <p className="text-[19px] leading-[1.4]">{experiencia.resumo}</p>
             {experiencia.link && (
               <a href={experiencia.link.url} target="_blank" rel="noopener" className="py-2.5 font-bold underline underline-offset-4">

@@ -3,6 +3,8 @@
 @import "@fontsource/fira-code/400.css";
 @import "@fontsource/fira-code/500.css";
 
+@custom-variant escuro (&:where([data-tema="escuro"], [data-tema="escuro"] *));
+
 @theme {
   --color-fundo: #f3f5f9;
   --color-bloco: #ffffff;
@@ -10,12 +12,32 @@
   --color-corpo: #33415a;
   --color-suave: #55627a;
   --color-borda: #8492a8;
+  /* marca: fundos com texto branco. destaque: texto colorido sobre fundo ou bloco. */
   --color-marca: #1d4fa3;
+  --color-marca-hover: #163e80;
+  --color-destaque: #1d4fa3;
 
   --font-sans: "Onest Variable", "Segoe UI", system-ui, sans-serif;
   --font-mono: "Fira Code", ui-monospace, Consolas, monospace;
 
   --radius-bloco: 22px;
+}
+
+:root {
+  color-scheme: light;
+}
+
+:root[data-tema="escuro"] {
+  color-scheme: dark;
+  --color-fundo: #0e131c;
+  --color-bloco: #171d29;
+  --color-tinta: #e8edf5;
+  --color-corpo: #c3ccda;
+  --color-suave: #98a5b8;
+  --color-borda: #5b6a80;
+  --color-marca: #2459b8;
+  --color-marca-hover: #1d4fa3;
+  --color-destaque: #8db4f5;
 }
 
 @layer base {

@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import ExperienceTabs from '../components/ExperienceTabs';
 import ProjectGrid, { type ProjetoCard } from '../components/ProjectGrid';
+import TemaToggle from '../components/TemaToggle.astro';
 import { experiencias } from '../data/experiencia';
 import { comBase, curriculo, foto, site } from '../data/site';
 
@@ -25,24 +26,25 @@ const projetos: ProjetoCard[] = colecao
 ---
 
 <Layout titulo={`${site.nome} · ${site.cargo}`}>
-  <header class="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 text-base font-semibold">
+  <header class="flex flex-wrap items-center justify-between gap-x-5 gap-y-1 text-base font-semibold">
     <a href={comBase()} class="py-3 text-xl font-extrabold">{site.marca}</a>
-    <nav aria-label="Principal" class="flex flex-wrap gap-x-5 gap-y-1">
-      <a href="#projetos" class="py-3 hover:text-marca">Projetos</a>
-      <a href="#experiencia" class="py-3 hover:text-marca">Experiência</a>
-      <a href="#contato" class="py-3 hover:text-marca">Contato</a>
+    <nav aria-label="Principal" class="order-last flex w-full flex-wrap gap-x-5 gap-y-1 sm:order-none sm:ml-auto sm:w-auto">
+      <a href="#projetos" class="py-3 hover:text-destaque">Projetos</a>
+      <a href="#experiencia" class="py-3 hover:text-destaque">Experiência</a>
+      <a href="#contato" class="py-3 hover:text-destaque">Contato</a>
     </nav>
+    <TemaToggle />
   </header>
 
   <main id="conteudo" class="flex flex-col gap-3.5">
     <div class="grid grid-cols-12 gap-3.5">
       <section class="col-span-12 flex min-w-0 flex-col justify-between gap-8 rounded-bloco bg-bloco p-[clamp(24px,4vw,48px)] md:col-span-8">
         <div class="flex flex-col gap-4">
-          <p class="font-semibold text-marca">{site.nome} · {site.cidade}</p>
+          <p class="font-semibold text-destaque">{site.nome} · {site.cidade}</p>
           <h1 class="text-[clamp(40px,6vw,80px)] font-extrabold leading-none tracking-[-0.035em]">Construo apps e as APIs por trás deles.</h1>
         </div>
         <div class="flex flex-wrap gap-2.5 font-bold">
-          <a href="#projetos" class="rounded-xl bg-marca px-[22px] py-[13px] text-white transition-colors hover:bg-tinta">Ver projetos</a>
+          <a href="#projetos" class="rounded-xl bg-marca px-[22px] py-[13px] text-white transition-colors hover:bg-marca-hover">Ver projetos</a>
           <a href={curriculo} download class="rounded-xl border border-borda px-[22px] py-3 transition-colors hover:bg-fundo">Baixar currículo</a>
         </div>
       </section>

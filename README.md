@@ -18,6 +18,7 @@ npm run preview    # abre o build localmente
 - **Capturas de tela:** coloque as imagens em `public/projetos/` e liste-as no campo `capturas` do projeto, com `alt`, `largura`, `altura` e `formato` (`celular`, `janela` ou `faixa`). Sem capturas, a galeria não aparece.
 - **Experiência:** fica em `src/data/experiencia.ts`. Use só o que já está no currículo, sem telas ou dados internos das empresas.
 - **Contato e links:** ficam em `src/data/site.ts`.
+- **Cores e modo escuro:** as cores dos dois temas ficam em `src/styles/global.css`. O site abre no modo claro, e a escolha da pessoa fica salva no navegador.
 
 ## Publicação
 

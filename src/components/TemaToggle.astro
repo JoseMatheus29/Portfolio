@@ -1,0 +1,57 @@
+---
+type Props = {
+  class?: string;
+};
+
+const { class: classe = '' } = Astro.props;
+---
+
+<button
+  type="button"
+  data-alternar-tema
+  aria-label="Ativar modo escuro"
+  title="Ativar modo escuro"
+  class:list={[
+    'flex size-11 flex-none cursor-pointer items-center justify-center rounded-xl border border-borda text-tinta transition-colors hover:bg-bloco',
+    classe,
+  ]}
+>
+  <svg class="block size-5 escuro:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+  </svg>
+  <svg class="hidden size-5 escuro:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="4"></circle>
+    <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+  </svg>
+</button>
+
+<script>
+  const CORES = { claro: '#f3f5f9', escuro: '#0e131c' };
+  const raiz = document.documentElement;
+
+  const aplicar = (tema: 'claro' | 'escuro') => {
+    if (tema === 'escuro') raiz.dataset.tema = 'escuro';
+    else delete raiz.dataset.tema;
+
+    const rotulo = tema === 'escuro' ? 'Ativar modo claro' : 'Ativar modo escuro';
+    document.querySelectorAll('[data-alternar-tema]').forEach((botao) => {
+      botao.setAttribute('aria-label', rotulo);
+      botao.setAttribute('title', rotulo);
+    });
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', CORES[tema]);
+  };
+
+  aplicar(raiz.dataset.tema === 'escuro' ? 'escuro' : 'claro');
+
+  document.querySelectorAll('[data-alternar-tema]').forEach((botao) => {
+    botao.addEventListener('click', () => {
+      const tema = raiz.dataset.tema === 'escuro' ? 'claro' : 'escuro';
+      aplicar(tema);
+      try {
+        localStorage.setItem('tema', tema);
+      } catch {
+        // Sem acesso ao armazenamento, o tema vale só para esta página.
+      }
+    });
+  });
+</script>

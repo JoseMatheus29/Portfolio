@@ -27,6 +27,12 @@ const pessoa = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      // Roda antes da pintura para o modo escuro não piscar em claro. O padrão é o modo claro.
+      try {
+        if (localStorage.getItem('tema') === 'escuro') document.documentElement.dataset.tema = 'escuro';
+      } catch {}
+    </script>
     <title>{titulo}</title>
     <meta name="description" content={descricao} />
     <meta name="theme-color" content="#f3f5f9" />
